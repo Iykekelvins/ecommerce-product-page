@@ -1,0 +1,146 @@
+.nav-header {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  background: white;
+  .navbar {
+    padding: 1rem 0 1.5rem;
+    border-bottom: 3px solid $light-grayish-blue;
+    ul > li {
+      margin-left: 1.2rem;
+      color: $grayish-blue;
+      position: relative;
+      transition: $transition;
+      &:hover {
+        color: $dark-grayish-blue;
+      }
+      &:hover ::after {
+        position: absolute;
+        content: "";
+        background: $orange;
+        background-repeat: no-repeat;
+        transition: $transition;
+        width: 100%;
+        height: 3px;
+        top: 3.5rem;
+        left: 0;
+      }
+    }
+    .cart {
+      margin-right: 1rem;
+      position: relative;
+      span {
+        color: $white;
+        position: absolute;
+        right: 0.5rem;
+        bottom: 1rem;
+        left: 1rem;
+        z-index: 3;
+        background: orange;
+        border-radius: 50px;
+        height: 15px;
+        width: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+  .toggle-btn {
+    display: none;
+  }
+  .phone-nav {
+    display: none;
+  }
+
+  .cart-container {
+    box-shadow: 1px 2px 20px 0px lightgrey;
+    width: 300px;
+    padding-bottom: 1rem;
+    background: $white;
+    position: absolute;
+    right: -2rem;
+    header {
+      border-bottom: 1px solid $grayish-blue;
+    }
+    h4 {
+      padding: 1rem;
+    }
+    .cartitem {
+      margin: 1rem;
+      &--info {
+        margin-left: 0.5rem;
+      }
+      h5 {
+        color: $grayish-blue;
+        span {
+          color: $dark-grayish-blue;
+        }
+      }
+    }
+    .checkout-btn {
+      background: $orange;
+      color: $white;
+      width: 90%;
+      margin: 0 auto;
+      transition: $transition;
+      &:hover {
+        opacity: 0.5;
+        box-shadow: 0px 18px 17px 0px $pale-orange;
+      }
+    }
+  }
+}
+
+@include media("<=800px") {
+  .nav-header {
+    .navbar {
+      border-bottom: 0px;
+      padding: 1rem 0;
+      ul {
+        display: none;
+      }
+      .toggle-btn {
+        display: unset !important;
+      }
+    }
+    .phone-nav {
+      display: unset !important;
+      background: rgba(0, 0, 0, 0.9);
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 9;
+      &--container {
+        background: $white;
+        width: 70%;
+        height: 100%;
+        padding: 1rem;
+        ul > li {
+          margin-bottom: 1rem;
+        }
+        button {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@include media("<=420px") {
+  .nav-header {
+    .navbar {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+    .cart-container {
+      width: 90%;
+      left: 0;
+      right: 0;
+      top: 5rem;
+      margin: auto;
+    }
+  }
+}
