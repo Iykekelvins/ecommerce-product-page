@@ -7,6 +7,15 @@ button {
   background: none;
 }
 
+.attribution {
+  margin: 2rem auto;
+  text-align: center;
+  a {
+    color: rgb(106, 106, 240);
+    text-decoration: underline;
+  }
+}
+
 .container {
   max-width: 960px;
   width: 90%;

@@ -1,4 +1,10 @@
-import { Navbar, ProductInfo, ProductImages, Seo } from "../components";
+import {
+  Navbar,
+  ProductInfo,
+  ProductImages,
+  Attribution,
+  Seo,
+} from "../components";
 
 export default function Home() {
   return (
@@ -10,6 +16,7 @@ export default function Home() {
           <ProductImages phoneBtn />
           <ProductInfo />
         </section>
+        <Attribution />
       </div>
     </div>
   );
